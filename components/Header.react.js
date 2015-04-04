@@ -12,22 +12,38 @@
 var React = require('react-native');
 var TodoActions = require('../actions/TodoActions');
 var TodoTextInput = require('./TodoTextInput.react');
+var {
+  View,
+  Text,
+  StyleSheet,
+} = React;
 
 var Header = React.createClass({
 
   /**
    * @return {object}
    */
+   /*
+   <header id="header">
+     <h1>todos</h1>
+
+
+
+
+
+   </header>
+   */
   render: function() {
     return (
-      <header id="header">
-        <h1>todos</h1>
-        <TodoTextInput
-          id="new-todo"
-          placeholder="What needs to be done?"
-          onSave={this._onSave}
-        />
-      </header>
+      <View>
+      <Text style={styles.titleText}>Header</Text>
+      <TodoTextInput
+        id="new-todo"
+        placeholder="What needs to be done?"
+        onSave={this._onSave}
+      />
+      </View>
+
     );
   },
 
@@ -38,12 +54,23 @@ var Header = React.createClass({
    * @param {string} text
    */
   _onSave: function(text) {
+    console.log('text--->',text);
     if (text.trim()){
       TodoActions.create(text);
     }
 
   }
 
+});
+
+var styles = StyleSheet.create({
+  baseText: {
+    fontFamily: 'Cochin',
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 });
 
 module.exports = Header;

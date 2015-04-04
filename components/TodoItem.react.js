@@ -9,17 +9,17 @@
  * @jsx React.DOM
  */
 
-var React = require('react');
-var ReactPropTypes = React.PropTypes;
+var React = require('react-native');
+//var ReactPropTypes = React.PropTypes;
 var TodoActions = require('../actions/TodoActions');
 var TodoTextInput = require('./TodoTextInput.react');
 
-var cx = require('react/lib/cx');
+//var cx = require('react/lib/cx');
 
 var TodoItem = React.createClass({
 
   propTypes: {
-   todo: ReactPropTypes.object.isRequired
+  // todo: ReactPropTypes.object.isRequired
   },
 
   getInitialState: function() {
@@ -33,6 +33,7 @@ var TodoItem = React.createClass({
    */
   render: function() {
     var todo = this.props.todo;
+
 
     var input;
     if (this.state.isEditing) {
@@ -50,11 +51,14 @@ var TodoItem = React.createClass({
     // This differentiation between classification and state becomes important
     // in the naming of view actions toggleComplete() vs. destroyCompleted().
     return (
+      {/*}
       <li
+
         className={cx({
           'completed': todo.complete,
           'editing': this.state.isEditing
         })}
+
         key={todo.id}>
         <div className="view">
           <input
@@ -70,6 +74,7 @@ var TodoItem = React.createClass({
         </div>
         {input}
       </li>
+      {*/}
     );
   },
 

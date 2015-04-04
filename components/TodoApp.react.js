@@ -15,7 +15,7 @@
  */
 
 //var Footer = require('./Footer.react');
-//var Header = require('./Header.react');
+var Header = require('./Header.react');
 //var MainSection = require('./MainSection.react');
 var React = require('react-native');
 var TodoStore = require('../stores/TodoStore');
@@ -58,8 +58,9 @@ var TodoApp = React.createClass({
   	return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Hello</Text>
-      {/*}
         <Header />
+      {/*}
+
         <MainSection
           allTodos={this.state.allTodos}
           areAllComplete={this.state.areAllComplete}

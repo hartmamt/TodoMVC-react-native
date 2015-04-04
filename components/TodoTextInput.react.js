@@ -9,8 +9,14 @@
  * @jsx React.DOM
  */
 
-var React = require('react');
+var React = require('react-native');
 var ReactPropTypes = React.PropTypes;
+
+var {
+  View,
+  TextInput,
+  StyleSheet,
+} = React;
 
 var ENTER_KEY_CODE = 13;
 
@@ -33,18 +39,31 @@ var TodoTextInput = React.createClass({
   /**
    * @return {object}
    */
+   /*
+   <input
+     className={this.props.className}
+     id={this.props.id}
+     placeholder={this.props.placeholder}
+     onBlur={this._save}
+     onChange={this._onChange}
+     onKeyDown={this._onKeyDown}
+     value={this.state.value}
+     autoFocus={true}
+     />
+     */
   render: function() /*object*/ {
     return (
-      <input
-        className={this.props.className}
+      <TextInput
         id={this.props.id}
         placeholder={this.props.placeholder}
+        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         onBlur={this._save}
-        onChange={this._onChange}
-        onKeyDown={this._onKeyDown}
+        onChangeText={(text) => this.setState({value: text})}
         value={this.state.value}
-        autoFocus={true}
+        onKeyDown={this._onKeyDown}
       />
+
+
     );
   },
 
@@ -56,15 +75,6 @@ var TodoTextInput = React.createClass({
     this.props.onSave(this.state.value);
     this.setState({
       value: ''
-    });
-  },
-
-  /**
-   * @param {object} event
-   */
-  _onChange: function(/*object*/ event) {
-    this.setState({
-      value: event.target.value
     });
   },
 
