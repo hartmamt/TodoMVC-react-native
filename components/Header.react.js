@@ -36,7 +36,7 @@ var Header = React.createClass({
   render: function() {
     return (
       <View>
-      <Text style={styles.titleText}>Header</Text>
+      <Text style={styles.titleText}>todos</Text>
       <TodoTextInput
         id="new-todo"
         placeholder="What needs to be done?"

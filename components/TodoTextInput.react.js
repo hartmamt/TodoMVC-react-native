@@ -54,6 +54,7 @@ var TodoTextInput = React.createClass({
   render: function() /*object*/ {
     return (
       <TextInput
+        style={styles.default}
         id={this.props.id}
         placeholder={this.props.placeholder}
         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
@@ -87,6 +88,17 @@ var TodoTextInput = React.createClass({
     }
   }
 
+});
+
+var styles = StyleSheet.create({
+  default: {
+    height: 26,
+    borderWidth: 0.5,
+    borderColor: '#0f0f0f',
+    padding: 4,
+    flex: 1,
+    fontSize: 13,
+  },
 });
 
 module.exports = TodoTextInput;

@@ -57,7 +57,6 @@ var TodoApp = React.createClass({
     console.log('state',this.state);
   	return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Hello</Text>
         <Header />
       {/*}
 
